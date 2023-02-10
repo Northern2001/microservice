@@ -1,0 +1,31 @@
+application:
+  name: gate-way
+  security:
+    api-ignored: /auth/**
+
+server:
+  port: 8762
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${eureka_url:http://10.1.11.60:8761/eureka}
+zuul:
+  ribbon:
+    eager-load:
+      enabled: true
+  ignored-services: "*"
+  routes:
+    auth-service:
+      path: /auth/**
+      service-id: auth-service
+      strip-prefix: false
+      sensitive-headers:
+        - Cookie
+        - Set-Cookie
+    employee-service:
+      path: /employee/**
+      service-id: employee-service
+    image-service:
+      path: /image/**
+      service-id: image-service

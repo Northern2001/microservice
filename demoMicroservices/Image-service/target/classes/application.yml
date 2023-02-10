@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: image-service
+
+server:
+  port: 8300
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    server-url:
+      default-zone: ${eureka_url:http://10.1.11.60:8761/eureka}

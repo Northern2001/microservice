@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://myDB:aim9YID8XPzgnCkr@cluster0.v2topgm.mongodb.net/db1?retryWrites=true&w=majority
+  application:
+    name: auth-service
+
+server:
+  port: 8400
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    server-url:
+      default-zone: ${eureka_url:http://10.1.11.60:8761/eureka}
+

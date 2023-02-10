@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: employee-service
+  datasource:
+    url: jdbc:postgresql://10.1.20.169:5432/intern_2022
+    username: postgres
+    password: Tdt@6868
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+server:
+  port: 9100
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    server-url:
+      default-zone: ${eureka_url:http://10.1.11.60:8761/eureka}
